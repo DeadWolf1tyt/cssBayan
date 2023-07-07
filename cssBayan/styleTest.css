@@ -1,0 +1,99 @@
+body {
+    background-color: #ccc;
+}
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.accordion__radio {
+    opacity: 0;
+}
+.accordion__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.02rem solid black;
+    cursor: pointer;
+    font-size: 2rem;
+    color: rgb(0, 136, 255);
+    transition: 1s all ease-in-out; 
+}
+.accordion__radio:checked ~ .accordion__label {
+    color: black;
+}
+.accordion__image {
+    width: 18rem;
+    transition: 2s;
+}
+.accordion__content {
+    max-height: 0;
+    overflow: hidden;
+    text-align: center;
+    transition: 2s all ease-in-out;
+}
+.accordion__radio:checked ~ .accordion__content {
+    max-height: 50%;
+    background-color: rgb(216, 182, 137);
+}
+.accordion__label-plus {
+    display: none;
+    margin: 0.3rem 1rem;
+}
+.plus {
+    width: 1.4rem;
+    transform: rotate(45deg);
+    transition: 1s all ease-in-out;
+}
+.accordion__radio:checked ~ .accordion__label {
+    background-color: rgba(163, 137, 102, 0);
+}
+.accordion__radio:checked ~ .accordion__label .accordion__label-plus .plus {
+    transform: rotate(0deg);
+}
+
+@media screen and (hover: hover) { /*только для устройств поддерживающих наведение курсора*/
+    .accordion__label:hover {
+        background-color: rgb(163, 137, 102);
+    }
+    .wrapper:hover .accordion__label{
+        color: black;
+    }
+    .accordion__radio:hover ~ .accordion__content {
+        max-height: 45%;
+    }
+    .accordion__content:hover {
+        max-height: 45%;
+    }
+    .wrapper:hover .accordion__label-plus {
+        display: block;
+    }
+    .accordion__item:hover .accordion__label .accordion__label-plus .plus {
+        transform: rotate(0deg);
+    }
+}
+
+@media (max-width: 1023px) {
+    .accordion__label {
+        font-size: 1.5rem;
+    }
+    .accordion__label-plus {
+        display: block;
+        width: 1rem;
+    }
+    .plus {
+        width: 1rem;
+    }
+  }
+
+  @media (max-width: 601px) {
+    .accordion__label {
+        font-size: 1rem;
+    }
+    .accordion__label-plus {
+        margin: 0.3rem 0.4rem;
+    }
+    .plus {
+        width: 0.5rem;
+    }
+  }
