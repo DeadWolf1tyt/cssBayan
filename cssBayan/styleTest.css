@@ -7,7 +7,7 @@ body {
     cursor: pointer;
 }
 .accordion__radio {
-    opacity: 0;
+    /*opacity: 0;*/
 }
 .accordion__label {
     display: flex;
